@@ -25,7 +25,7 @@ public class MybatisConfiguration {
 	public SqlSessionFactory sqlSessionFactory(@Autowired DataSource dataSource, ApplicationContext applicationContext) throws Exception, SQLException {
 		SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
 		factoryBean.setDataSource(dataSource);
-		factoryBean.setMapperLocations(applicationContext.getResources("classpath:mybatis/sql/*.xml"));
+		factoryBean.setMapperLocations(applicationContext.getResources("classpath:mybatis/mapper/*.xml"));
 		
 		//CamelCase 적용
 		SqlSessionFactory factory = factoryBean.getObject();
