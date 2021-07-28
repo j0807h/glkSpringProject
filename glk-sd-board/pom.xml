@@ -87,6 +87,13 @@
 			<version>1.2</version>
 		</dependency>
 
+		<!-- Spring Security 모듈(BCrypt) -->
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
+		<dependency>
+    		<groupId>org.springframework.security</groupId>
+    		<artifactId>spring-security-web</artifactId>
+    		<version>5.5.1</version>
+		</dependency>
 
 	</dependencies>
 
