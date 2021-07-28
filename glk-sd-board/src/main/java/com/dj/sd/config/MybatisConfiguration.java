@@ -18,7 +18,7 @@ import org.springframework.context.annotation.Configuration;
  * @author JeongHwa
  * */
 @Configuration
-@MapperScan(basePackages = "com.jh.sp.mvc.repository")
+@MapperScan(basePackages = "com.dj.sd.mapper")
 public class MybatisConfiguration {
 	
 	@Bean

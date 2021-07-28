@@ -24,7 +24,7 @@ public class SwaggerConfiguration {
 	public Docket docket() {
 		ApiInfoBuilder apiInfo = new ApiInfoBuilder();
 		apiInfo.title("API 서버 문서");
-		apiInfo.description("(정화)API 서버 문서 입니다.");
+		apiInfo.description("(GLK SD BOARD)API 서버 문서 입니다.");
 		
 		Docket docket = new Docket(DocumentationType.SWAGGER_2);
 		docket.apiInfo(apiInfo.build());
