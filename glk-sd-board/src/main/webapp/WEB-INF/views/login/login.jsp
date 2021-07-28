@@ -21,23 +21,6 @@
 	<!-- 로그인 -->
 	<div id="LoginWrapper">
 		<div class="LoginDataWrap">
-			<form:form action="loginAct" method="post" name="frm">
-				<div class="idForm">
-					<form:input path="userId" id="userId" placeholder="ID" />
-				</div>
-				<div class="passForm">
-					<input type="password" name="userPw" id="userPw" placeholder="PW" />
-				</div>
-
-				<!-- 에러 -->
-				<div>
-					<form:errors path="userId"/>&nbsp;
-					<form:errors path="userPw"/>&nbsp;
-<%-- 					<span>${valid_userId }</span>&nbsp; --%>
-<%-- 					<span>${valid_userPw }</span> --%>
-				</div>
-				<input type="submit" value="LOG IN" class="loginButton" />
-			</form:form>
 		</div>
 	</div>
 </body>
