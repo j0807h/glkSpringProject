@@ -15,6 +15,7 @@ import lombok.Data;
 
 /**
  * @author DEREK
+ * 
  * DB Board Table
  */
 @Data
