@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dj.sd.mapper.TestMapper">
+	<select id="get" parameterType="int" resultType="com.dj.sd.domain.UserVO">
+		select
+			USER_CO,
+			USER_ID,
+			USER_PW,
+			USER_NAME,
+			USER_FLAG
+		from USER
+		where USER_FLAG=#{userFlag}
+	</select>
+
+</mapper>
