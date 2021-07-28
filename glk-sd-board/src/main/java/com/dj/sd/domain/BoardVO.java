@@ -15,19 +15,25 @@ import lombok.Data;
 
 /**
  * @author DEREK
- * DB User Table
+ * DB Board Table
  */
 @Data
-public class UserVO {
+public class BoardVO {
 
 	//Database: snake_case 
 	//VO: camelCase
 	
 	//primary key
+	private String boardCo;
+	
+	//foreign key: User table - User Code
 	private String userCo;
 	
-	private String userId;
-	private String userPw;
-	private String userName;
-	private int userFlag;
+	private String boardSubj;
+	private String boardCont;
+	private String orgFName;
+	private String storeFName;
+	private int fSize;
+	private int boardCnt;
+	private String boardReg;
 }
