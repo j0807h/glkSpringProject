@@ -21,7 +21,7 @@ public interface SignUpMapper {
 	 * 회원가입
 	 * 
 	 */
-	public void insertSignUp(UserVO userVo) throws Exception;
+	public void insertUserInfo(UserVO userVo) throws Exception;
 	
 	/**
 	 * @param userVo

@@ -1,5 +1,6 @@
 package com.dj.sd.service;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -18,7 +19,7 @@ public class SignUpService {
 
 	@Autowired
 	SignUpMapper signUpMapper;
-
+	
 	/**
 	 * @param userVo
 	 * @throws Exception
@@ -28,10 +29,16 @@ public class SignUpService {
 	 * 
 	 */
 	public void signUp(UserVO userVo) throws Exception
-	{
+	{		
 		if(!isDuplicate(userVo))
 		{
-			signUpMapper.insertSignUp(encPwd(userVo));
+			//USER_CO VARCHAR(200)이라 앞에 한자리 'u' 빼고 199자 랜덤 숫자 지정
+			userVo.setUserCo('u' + getRandUserCo(199));
+			
+			//1: 현재회원, 0: 탈퇴
+			userVo.setUserFlag(1);
+			
+			signUpMapper.insertUserInfo(encPwd(userVo));
 		}
 	}
 	
@@ -47,10 +54,10 @@ public class SignUpService {
 	{
 		if(userVo.getUserId().equals(signUpMapper.selectUserId(userVo)))
 		{
-			return false;
+			return true;
 		}
 			
-		return true;
+		return false;
 	}
 	
 	/**
@@ -72,5 +79,14 @@ public class SignUpService {
 		userVo.setUserPw(secPw);
 		
 		return userVo;
+	}
+	
+	/**
+	 * @param length
+	 * @return 랜덤으로 생성된 length 만큼의 숫자 (회원코드 생성용)
+	 */
+	private String getRandUserCo(int length)
+	{
+		return RandomStringUtils.randomNumeric(length);
 	}
 }
