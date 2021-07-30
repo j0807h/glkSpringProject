@@ -65,6 +65,7 @@ ul, li {
 /* 로그인 */
 #LoginWrapper {
 	text-align: center;
+	margin-bottom : 80px;
 }
 
 #LoginWrapper .LoginNavi {

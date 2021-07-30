@@ -6,18 +6,18 @@
 <head>
 <meta charset="UTF-8">
 <title>로그인</title>
+<link href="<c:url value='/static/css/top.css'/>" rel="stylesheet" type="text/css" />
 <link href="<c:url value='/static/css/loginForm.css'/>" rel="stylesheet" type="text/css" />
 <link href="<c:url value='/static/css/footer.css'/>" rel="stylesheet" type="text/css" />
 </head>
 <body>
+<!-- 	top -->
+		<%@ include file="../main/top.jsp" %>
+<!-- 	top 끝 -->
 	<!-- 타이틀 -->
 	<div id="topWrapper">
-		<a href="javascript:history.back();"></a>
-			<span>◁</span>뒤로가기
-			<img src="/static/images/glk_i.png" />
-			<a href="<c:url value='/'/>" class="logoImage" style="background-image: url('<c:url value="/static/images/glk_i.png"/>');">
-			</a>
-		
+		<a href="javascript:history.back();"><span>◁</span>뒤로가기</a>
+			
 		<h2>
 			Login
 		</h2>
@@ -51,7 +51,7 @@
 		<!-- 하단 나비 -->
 		<div id="bottomWrapper">
 			<ul>
-				<li><a href="/login/signUp">Sign Up</a></li>
+				<li><a href="/signUpForm">Sign Up</a></li>
 				<li><a href="/login/checkPh">Find ID</a></li>
 				<li><a href="/login/checkId">Find Password</a></li>
 			</ul>
@@ -59,7 +59,7 @@
 	</div>
 
 	<!-- foot -->
-	<footer> COPYRIGHT © 2019 GEMVAXLINK. ALL RIGHTS RESERVED. </footer>
+		<%@ include file = "../main/foot.jsp" %>
 	<!-- foot 끝 -->
 </body>
 </html>

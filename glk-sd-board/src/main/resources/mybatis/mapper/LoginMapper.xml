@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dj.sd.mapper.LoginMapper">
+
+	<select id="findId" parameterType="string" resultType="com.dj.sd.domain.LoginVO">
+		select user_id as id
+		from user
+		where
+			user_name = #{userName}, user_ph = #{value} and user_flag = 1
+	</select>
+	<select id="getUser" parameterType="com.dj.sd.domain.LoginVO" resultType="com.dj.sd.domain.LoginVO">
+		select USER_ID as id
+		from USER
+		where USER_ID = #{id} and user_flag = 1 
+	</select>
+
+</mapper>

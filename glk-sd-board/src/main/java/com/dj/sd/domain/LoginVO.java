@@ -23,4 +23,10 @@ public class LoginVO {
 	
 	/* 이름 */
 	private String name;
+	
+	/* 
+	 * 추후 관리자인지 회원인지 구분하기 위함.
+	 * ( 관리자:0, 회원:1)
+	 *  */
+	private String grade;
 }

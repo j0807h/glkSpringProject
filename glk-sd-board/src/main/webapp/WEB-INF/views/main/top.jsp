@@ -12,8 +12,9 @@
 	<header>
 		<!-- 로고  -->
 		<div class="logoArea">
+			<a href="<c:url value='/login/loginForm'/>" class="logoImage" ><img src="/static/images/glk_i.png"/></a>
 			<a href="<c:url value='/'/>" class="logoImage"
-				style="background-image: url('<c:url value="/static/images/glk_i.png"/>');">
+				style="background-image: url('<c:url value="../static/images/glk_i.png"/>');">
 			</a>
 		</div>
 		<!-- 나비(메뉴선택 바)  -->
