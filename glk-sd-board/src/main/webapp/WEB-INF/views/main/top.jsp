@@ -12,14 +12,9 @@
 	<header>
 		<!-- 로고  -->
 		<div class="logoArea">
-<<<<<<< HEAD
 			<a href="<c:url value='/login/loginForm'/>" class="logoImage" ><img src="/static/images/glk_i.png"/></a>
 			<a href="<c:url value='/'/>" class="logoImage"
 				style="background-image: url('<c:url value="../static/images/glk_i.png"/>');">
-=======
-			<a href="<c:url value='/'/>" class="logoImage"
-				style="background-image: url('<c:url value="/static/images/glk_i.png"/>');">
->>>>>>> branch 'branch_signUp' of https://github.com/j0807h/glkSpringProject.git
 			</a>
 		</div>
 		<!-- 나비(메뉴선택 바)  -->

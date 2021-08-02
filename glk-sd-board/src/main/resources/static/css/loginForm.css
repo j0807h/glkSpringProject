@@ -12,6 +12,7 @@ a:hover {
 
 body {
 /* 	width: 1140px; */
+	height:100%;
 	margin: 0 auto;
 	font-family: Malgun Gothic;
 	font-size: 16px;
@@ -65,10 +66,9 @@ ul, li {
 /* 로그인 */
 #LoginWrapper {
 	text-align: center;
-<<<<<<< HEAD
-	margin-bottom : 80px;
-=======
->>>>>>> branch 'branch_signUp' of https://github.com/j0807h/glkSpringProject.git
+/* 	margin-bottom : 80px; */
+	height:100%;
+	overflow:hidden;
 }
 
 #LoginWrapper .LoginNavi {

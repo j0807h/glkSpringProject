@@ -26,11 +26,6 @@
 	<!-- 로그인 -->
 	<div id="LoginWrapper">
 		<div class="LoginDataWrap">
-		</div>
-	</div>
-	<!-- 로그인 -->
-	<div id="LoginWrapper">
-		<div class="LoginDataWrap">
 			<!-- 화면 바뀌게 -->
 			<form:form action="loginAct" method="post" name="frm" modelAttribute="loginVO">
 				<div class="idForm">
@@ -43,20 +38,18 @@
 
 				<!-- 에러 -->
 				<div>
-<%-- 					<form:errors path="userId"/>&nbsp; --%>
-<%-- 					<form:errors path="userPw"/>&nbsp; --%>
+					<form:errors path="userId"/>&nbsp;
+					<form:errors path="userPw"/>&nbsp;
+					<span>${not_userId }</span>&nbsp;
+					<span>${valid_userPw }</span>
 				</div>
+				<!-- 에러 끝-->
 				<input type="submit" value="LOG IN" class="loginButton" />
 			</form:form>
 		</div>
 		<!-- 하단 나비 -->
-		<div id="bottomWrapper">
-			<ul>
-				<li><a href="/signUpForm">Sign Up</a></li>
-				<li><a href="/login/checkPh">Find ID</a></li>
-				<li><a href="/login/checkId">Find Password</a></li>
-			</ul>
-		</div>
+		<%@ include file = "bottomWrapper.jsp" %>
+		<!-- 하단 나비 끝 -->
 	</div>
 
 	<!-- foot -->

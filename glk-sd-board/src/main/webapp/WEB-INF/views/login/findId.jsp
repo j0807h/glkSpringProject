@@ -37,13 +37,8 @@
 		</div>
 		<br />
 		<!-- 하단 나비 -->
-		<div id="bottomWrapper">
-			<ul>
-				<li><a href="/signUpForm">Sign Up</a></li>
-				<li><a href="/login/checkPh">Find ID</a></li>
-				<li><a href="/login/checkId">Find Password</a></li>
-			</ul>
-		</div>
+		<%@ include file = "bottomWrapper.jsp" %>
+		<!-- 하단 나비 끝 -->
 	</div>
 
 	<!-- foot -->

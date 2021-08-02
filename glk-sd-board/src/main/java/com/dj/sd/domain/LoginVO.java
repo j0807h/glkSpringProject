@@ -2,6 +2,9 @@ package com.dj.sd.domain;
 
 
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 import lombok.Data;
 /*
  * lombok을 이용해 보자
@@ -17,9 +20,11 @@ import lombok.Data;
 @Data //lombok 선언
 public class LoginVO {
 	/* 아이디 */
+	@NotNull(message = "아이디를 입력해 주세요")
 	private String userId;
 	
 	/* 비밀번호 */
+	@NotNull(message = "비밀번호를 입력해 주세요")
 	private String userPw;
 	
 	/* 이름 */
@@ -30,4 +35,15 @@ public class LoginVO {
 	 * ( 관리자:0, 회원:1)
 	 *  */
 	private String grade;
+
+	
+	//생성자
+	public LoginVO(String userId, String name) {
+		super();
+		this.userId = userId;
+		this.name = name;
+	}
+	public LoginVO() {} //default 생성자
+	
+
 }

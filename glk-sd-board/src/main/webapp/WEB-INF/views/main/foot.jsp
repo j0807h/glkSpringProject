@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<!-- foot -->
 	<footer> COPYRIGHT © 2021 GEMVAXLINK. ALL RIGHTS RESERVED. </footer>
-	<!-- foot 끝 -->
 </body>
 </html>

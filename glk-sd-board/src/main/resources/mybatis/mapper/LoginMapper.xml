@@ -10,7 +10,7 @@
 			user_name = #{userName}, user_ph = #{value} and user_flag = 1
 	</select>
 	<select id="getUser" parameterType="com.dj.sd.domain.LoginVO" resultType="com.dj.sd.domain.LoginVO">
-		select USER_ID as userId
+		select USER_ID as userId, USER_PW as userPw, USER_NAME name
 		from USER
 		where USER_ID = #{userId} and user_flag = 1 
 	</select>
