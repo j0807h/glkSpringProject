@@ -112,7 +112,7 @@ public class SignUpService {
 		}
 		
 		//숫자만 썼을 경우 "-" 추가 형태로 변경
-		userVo.setUserPh(userVo.getUserPh().replaceAll(regEx,  "$1-$2-$3"));
+		userVo.setUserPh(userVo.getUserPh().replaceAll(regEx, "$1-$2-$3"));
 		
 		return true;
 	}

@@ -1,7 +1,10 @@
 package com.dj.sd.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,16 +38,28 @@ public class SignUpController {
 
 	//회원 생성
 	@PostMapping("/signUpAct")
-	public ModelAndView postSignUpForm(UserVO userVo) throws Exception 
+	public ModelAndView postSignUpForm(@Validated @ModelAttribute("userInfo") UserVO userVo, BindingResult bindingResult) throws Exception 
 	{
-		//TODO 회원생성 후 완료되면 login view로 넘겨준다
-		//임시로 "test.jsp"로 설정
-		ModelAndView mav = new ModelAndView("test");
-	
-		//userVo에 id, pw, name, ph를 Spring이 자동으로 .jsp에서 읽어옴
-		//읽어온걸 base로 service signUp 진행
-		signUpService.signUp(userVo);
+		//Error가 존재할 경우
+		if(bindingResult.hasErrors())
+		{
+			ModelAndView mav = new ModelAndView("/login/signUpForm");
+			mav.addObject(userVo);
+			return mav;
+		}
 		
-		return mav;
+		//Error 없이 성공 시
+		else
+		{
+			//TODO 회원생성 후 완료되면 login view로 넘겨준다
+			//임시로 "test.jsp"로 설정
+			ModelAndView mav = new ModelAndView("test");
+		
+			//userVo에 id, pw, name, ph를 Spring이 자동으로 .jsp에서 읽어옴
+			//읽어온걸 base로 service signUp 진행
+			signUpService.signUp(userVo);
+			
+			return mav;
+		}
 	}
 }

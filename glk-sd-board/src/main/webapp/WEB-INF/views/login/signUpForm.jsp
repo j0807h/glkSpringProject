@@ -9,47 +9,6 @@
 <link href="<c:url value='/static/css/loginForm.css'/>" rel="stylesheet" type="text/css" />
 <link href="<c:url value='/static/css/footer.css'/>" rel="stylesheet" type="text/css" />
 
-<!-- Error Handler -->
-<script>
-	function checkValue()
-	{
-		/* Empty Check */
-		if(document.getElementById("userId").value=="")
-		{
-			alert("아이디를 입력하세요");
-			return;
-		}
-		
-		if(document.getElementById("userPw").value=="")
-		{
-			alert("비밀번호를 입력하세요");
-			return;
-		}
-		
-		if(document.getElementById("userName").value=="")
-		{
-			alert("이름을 입력하세요");
-			return;
-		}
-		
-		if(document.getElementById("userPh").value=="")
-		{
-			alert("번호를 입력하세요");
-			return;
-		}
-		
-		/* Exceed Available Length */
-		if(document.getElementById("userId").value=="")
-		{
-			alert("아이디를 입력하세요");
-			return;
-		}
-		
-		
-	}
-</script>
-
-
 </head>
 <body>
 	<!-- 타이틀 -->
@@ -77,30 +36,39 @@
 		<!-- 수정중---------------------------------------------------- -->
 		
 			<!-- 화면 바뀌게 -->
-			<form action="/signUp/signUpAct" method="post" name="frm">
+			<form:form action="/signUp/signUpAct" method="post" name="frm" modelAttribute="userInfo">
 				<div class="idForm">
 					<input type=text name="userId" id="userId" placeholder="ID를 입력하세요" />
+					<br>
+					<form:errors path="userId" />
 				</div>
 				
 				<div class="passForm">
 					<input type="password" name="userPw" id="userPw" placeholder="비밀번호를 입력하세요" />
+					<br>
+					<form:errors path="userPw" />
+				</div>
+				
+				<div class="checkPassForm">
+					<input type="password" name="checkUserPw" id="checkUserPw" placeholder="비밀번호를 재입력 하세요" />
+					<br>
+					<form:errors path="checkUserPw" />
 				</div>
 				
 				<div class="nameForm">
 					<input type=text name="userName" id="userName" placeholder="이름을 입력하세요" />
+					<br>
+					<form:errors path="userName" />
 				</div>
 			
 				<div class="phForm">
-					<input type=text name="userPh" id="userPh" placeholder="000-0000-0000" />
+					<input type=text name="userPh" id="userPh" placeholder="번호를 입력하세요 (010-1234-5678)" />
+					<br>
+					<form:errors path="userPh" />
 				</div>
 
-				<!-- 에러 -->
-				<div>
-<%-- 					<form:errors path="userId"/>&nbsp; --%>
-<%-- 					<form:errors path="userPw"/>&nbsp; --%>
-				</div>
 				<input type="submit" value="SIGN UP" class="loginButton" />
-			</form>
+			</form:form>
 		</div>
 		<!-- 하단 나비 -->
 		<div id="bottomWrapper">
