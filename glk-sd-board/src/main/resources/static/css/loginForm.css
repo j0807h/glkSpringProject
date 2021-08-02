@@ -65,7 +65,10 @@ ul, li {
 /* 로그인 */
 #LoginWrapper {
 	text-align: center;
+<<<<<<< HEAD
 	margin-bottom : 80px;
+=======
+>>>>>>> branch 'branch_signUp' of https://github.com/j0807h/glkSpringProject.git
 }
 
 #LoginWrapper .LoginNavi {

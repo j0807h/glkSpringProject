@@ -19,6 +19,17 @@ public interface SignUpMapper {
 	 * @throws Exception
 	 * 
 	 * 회원가입
+	 * 
 	 */
-	public void signUp(UserVO userVo) throws Exception;
+	public void insertUserInfo(UserVO userVo) throws Exception;
+	
+	/**
+	 * @param userVo
+	 * @return 찾는 아이디
+	 * @throws Exeption
+	 * 
+	 * 아이디 조회
+	 * 
+	 */
+	public String selectUserId(UserVO userVo) throws Exception;	
 }

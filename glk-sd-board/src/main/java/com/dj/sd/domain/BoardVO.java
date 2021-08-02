@@ -17,6 +17,7 @@ import lombok.Data;
  * @author DEREK
  * 
  * DB Board Table
+ * 
  */
 @Data
 public class BoardVO {

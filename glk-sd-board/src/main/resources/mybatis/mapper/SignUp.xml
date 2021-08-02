@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- @DEREK -->
+<!-- UserVO 타입을 사용한 
+		SignUpMapper interface의 method를
+	 	SignUp.xml에 Query문을 활용해 구현 -->
+
+<!-- namespace : mapper interface에 대한 풀 패키지명 입력 -->
+<mapper namespace="com.dj.sd.mapper.SignUpMapper">
+	
+	<!-- id : mapper interface의 쿼리문을 실행할 method명 과 동일 -->
+	<!-- resultType : 결과값의 타입 -->
+	<!-- 회원 등록 -->
+    <insert id="insertUserInfo">
+        INSERT INTO USER
+        (
+        	USER_CO,
+        	USER_ID,
+        	USER_PW,
+        	USER_NAME,
+        	USER_PH,
+        	USER_FLAG
+        )
+        VALUES
+        (
+        	#{userCo},
+        	#{userId},
+        	#{userPw},
+        	#{userName},
+        	#{userPh},
+        	#{userFlag}
+        )
+    </insert>    
+    
+    <!-- 회원 조회 -->
+    <select id="selectUserId" resultType="String">
+        SELECT USER_ID 
+        FROM USER
+        WHERE USER_ID = #{userId}
+    </select>   
+</mapper>

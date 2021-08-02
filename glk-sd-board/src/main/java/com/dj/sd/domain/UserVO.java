@@ -17,6 +17,7 @@ import lombok.Data;
  * @author DEREK
  * 
  * DB User Table
+ * 
  */
 @Data
 public class UserVO {
@@ -30,5 +31,6 @@ public class UserVO {
 	private String userId;
 	private String userPw;
 	private String userName;
+	private String userPh;
 	private int userFlag;
 }
