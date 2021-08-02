@@ -14,7 +14,7 @@ import com.dj.sd.mapper.LoginMapper;
 @Service
 public class FindService {
 	@Autowired
-	LoginMapper loginMapper;
+	private LoginMapper loginMapper;
 	
 	/*
 	 * 아이디 찾기

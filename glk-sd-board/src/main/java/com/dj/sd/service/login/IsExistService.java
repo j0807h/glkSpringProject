@@ -25,12 +25,12 @@ public class IsExistService {
 		Integer cnt = 0;
 		LoginVO vo = new LoginVO();
 		
-		vo.setId(userId);
+		vo.setUserId(userId);
 		List<LoginVO> list = loginMapper.getUser(vo);
-		System.out.println("아이디찾기:" + list.get(0).getId());
+		System.out.println("아이디찾기:" + list.get(0).getUserId());
 		if(list.size() != 0) {
 			cnt = 1;
-			session.setAttribute("loginId",list.get(0).getId());
+			session.setAttribute("loginId",list.get(0).getUserId());
 		}
 		
 		model.addAttribute("val", cnt);

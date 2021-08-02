@@ -32,9 +32,10 @@
 	<div id="LoginWrapper">
 		<div class="LoginDataWrap">
 			<!-- 화면 바뀌게 -->
-			<form action="loginAct" method="post" name="frm">
+			<form:form action="loginAct" method="post" name="frm" modelAttribute="loginVO">
 				<div class="idForm">
-					<input type=text name="userId" id="userId" placeholder="ID" />
+<!-- 					<input type=text name="userId" id="userId" placeholder="ID" /> -->
+					<form:input path="userId" id="userId" placeholder="ID" />
 				</div>
 				<div class="passForm">
 					<input type="password" name="userPw" id="userPw" placeholder="PW" />
@@ -46,7 +47,7 @@
 <%-- 					<form:errors path="userPw"/>&nbsp; --%>
 				</div>
 				<input type="submit" value="LOG IN" class="loginButton" />
-			</form>
+			</form:form>
 		</div>
 		<!-- 하단 나비 -->
 		<div id="bottomWrapper">
@@ -62,4 +63,5 @@
 		<%@ include file = "../main/foot.jsp" %>
 	<!-- foot 끝 -->
 </body>
+
 </html>

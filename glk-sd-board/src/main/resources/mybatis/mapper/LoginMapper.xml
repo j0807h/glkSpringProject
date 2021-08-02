@@ -4,15 +4,15 @@
 <mapper namespace="com.dj.sd.mapper.LoginMapper">
 
 	<select id="findId" parameterType="string" resultType="com.dj.sd.domain.LoginVO">
-		select user_id as id
+		select user_id as userId
 		from user
 		where
 			user_name = #{userName}, user_ph = #{value} and user_flag = 1
 	</select>
 	<select id="getUser" parameterType="com.dj.sd.domain.LoginVO" resultType="com.dj.sd.domain.LoginVO">
-		select USER_ID as id
+		select USER_ID as userId
 		from USER
-		where USER_ID = #{id} and user_flag = 1 
+		where USER_ID = #{userId} and user_flag = 1 
 	</select>
 
 </mapper>

@@ -1,6 +1,7 @@
 package com.dj.sd.domain;
 
 
+
 import lombok.Data;
 /*
  * lombok을 이용해 보자
@@ -16,10 +17,10 @@ import lombok.Data;
 @Data //lombok 선언
 public class LoginVO {
 	/* 아이디 */
-	private String id;
+	private String userId;
 	
 	/* 비밀번호 */
-	private String pw;
+	private String userPw;
 	
 	/* 이름 */
 	private String name;
