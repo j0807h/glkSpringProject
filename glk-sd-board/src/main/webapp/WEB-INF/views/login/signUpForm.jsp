@@ -8,6 +8,48 @@
 <title>회원가입</title>
 <link href="<c:url value='/static/css/loginForm.css'/>" rel="stylesheet" type="text/css" />
 <link href="<c:url value='/static/css/footer.css'/>" rel="stylesheet" type="text/css" />
+
+<!-- Error Handler -->
+<script>
+	function checkValue()
+	{
+		/* Empty Check */
+		if(document.getElementById("userId").value=="")
+		{
+			alert("아이디를 입력하세요");
+			return;
+		}
+		
+		if(document.getElementById("userPw").value=="")
+		{
+			alert("비밀번호를 입력하세요");
+			return;
+		}
+		
+		if(document.getElementById("userName").value=="")
+		{
+			alert("이름을 입력하세요");
+			return;
+		}
+		
+		if(document.getElementById("userPh").value=="")
+		{
+			alert("번호를 입력하세요");
+			return;
+		}
+		
+		/* Exceed Available Length */
+		if(document.getElementById("userId").value=="")
+		{
+			alert("아이디를 입력하세요");
+			return;
+		}1111
+		
+		
+	}
+</script>
+
+
 </head>
 <body>
 	<!-- 타이틀 -->
@@ -35,15 +77,21 @@
 		<!-- 수정중---------------------------------------------------- -->
 		
 			<!-- 화면 바뀌게 -->
-			<form action="/signUpAct" method="post" name="frm">
+			<form action="/signUp/signUpAct" method="post" name="frm">
 				<div class="idForm">
 					<input type=text name="userId" id="userId" placeholder="ID를 입력하세요" />
 				</div>
+				
 				<div class="passForm">
 					<input type="password" name="userPw" id="userPw" placeholder="비밀번호를 입력하세요" />
 				</div>
+				
 				<div class="nameForm">
 					<input type=text name="userName" id="userName" placeholder="이름을 입력하세요" />
+				</div>
+			
+				<div class="phForm">
+					<input type=text name="userPh" id="userPh" placeholder="000-0000-0000" />
 				</div>
 
 				<!-- 에러 -->

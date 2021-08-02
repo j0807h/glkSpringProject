@@ -1,10 +1,11 @@
 package com.dj.sd.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.dj.sd.domain.UserVO;
 import com.dj.sd.service.SignUpService;
@@ -15,33 +16,35 @@ import com.dj.sd.service.SignUpService;
  * Sign Up Controller (회원가입 컨트롤러)
  *
  */
-
-////////////////RESTful API? 수정 필요
-//////////////몰라서 일단 예전 방법으로 실행
-
-@Controller
+@RestController
+@RequestMapping(value="/signUp")
 public class SignUpController {
 
 	@Autowired
 	SignUpService signUpService;
 
-	@RequestMapping(value="/signUp", method=RequestMethod.GET)
-	public String getSignUpForm() throws Exception
+	//회원가입 화면 가져오기
+	@GetMapping
+	public ModelAndView getSignUpForm() throws Exception
 	{
-		return "/login/signUpForm";
+		// ModelAndView 생성
+		ModelAndView mav = new ModelAndView("/login/signUpForm");
+
+		return mav;
 	}
-	
-	
-	@RequestMapping(value="/signUpAct", method=RequestMethod.POST) 
-	public String postSignUpForm(UserVO userVo, RedirectAttributes redirectAttributes) throws Exception
+
+	//회원 생성
+	@PostMapping("/signUpAct")
+	public ModelAndView postSignUpForm(UserVO userVo) throws Exception 
 	{
+		//TODO 회원생성 후 완료되면 login view로 넘겨준다
+		//임시로 "test.jsp"로 설정
+		ModelAndView mav = new ModelAndView("test");
+	
+		//userVo에 id, pw, name, ph를 Spring이 자동으로 .jsp에서 읽어옴
+		//읽어온걸 base로 service signUp 진행
 		signUpService.signUp(userVo);
-		return "test"; 
+		
+		return mav;
 	}
-	 
-	
-	/*
-	 * @PostMapping("/signUp") public void signUp(@RequestBody UserVO userVo) throws
-	 * Exception { signUpService.signUp(userVo); }
-	 */
 }

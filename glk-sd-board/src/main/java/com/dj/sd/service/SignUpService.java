@@ -1,5 +1,7 @@
 package com.dj.sd.service;
 
+import java.util.regex.Pattern;
+
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -25,12 +27,12 @@ public class SignUpService {
 	 * @throws Exception
 	 * 
 	 * 회원가입 method
-	 * 중복회원이 아닐경우, 비밀번호 암호화 후 회원 등록
+	 * 중복회원이 아니고 전화번호 형식이 맞으면, 비밀번호 암호화 후 회원 등록
 	 * 
 	 */
 	public void signUp(UserVO userVo) throws Exception
 	{		
-		if(!isDuplicate(userVo))
+		if(!isDuplicate(userVo) && isPhFormat(userVo))
 		{
 			//USER_CO VARCHAR(200)이라 앞에 한자리 'u' 빼고 199자 랜덤 숫자 지정
 			userVo.setUserCo('u' + getRandUserCo(199));
@@ -88,5 +90,30 @@ public class SignUpService {
 	private String getRandUserCo(int length)
 	{
 		return RandomStringUtils.randomNumeric(length);
+	}
+	
+	/**
+	 * @param userVo
+	 * @return 전화번호 format에 맞게 변경 후 true return
+	 * 		   숫자 및 전화번호 format이 아닐경우 false return
+	 * 		   "핸드폰" 번호만 인식
+	 * @throws Exception
+	 */
+	private boolean isPhFormat(UserVO userVo) throws Exception
+	{
+		//variables
+		//숫자: 3자리-3,4자리-4자리 형태
+		String regEx = "(\\d{3})(\\d{3,4})(\\d{4})";
+		
+		//format이 맞지 않을시 false
+		if(!Pattern.matches(regEx, userVo.getUserPh()))
+		{
+			return false;
+		}
+		
+		//숫자만 썼을 경우 "-" 추가 형태로 변경
+		userVo.setUserPh(userVo.getUserPh().replaceAll(regEx,  "$1-$2-$3"));
+		
+		return true;
 	}
 }

@@ -19,6 +19,7 @@
         	USER_ID,
         	USER_PW,
         	USER_NAME,
+        	USER_PH,
         	USER_FLAG
         )
         VALUES
@@ -27,6 +28,7 @@
         	#{userId},
         	#{userPw},
         	#{userName},
+        	#{userPh},
         	#{userFlag}
         )
     </insert>    

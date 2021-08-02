@@ -31,5 +31,6 @@ public class UserVO {
 	private String userId;
 	private String userPw;
 	private String userName;
+	private String userPh;
 	private int userFlag;
 }
